@@ -2,24 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 const App = props => {
-  const cars = [
-    { name: 'Honda', type: "CRV" },
-    { name: 'Toyota', type:"Highlander" },
-    { name: 'Ford', type: "F-150" },
-    { name: 'Suburu',type: "Crosstrek" }
+  const favoriteCars = [
+    'Honda CR-V ',
+    'Toyota Highlander',
+    'Ford F-150',
+    'BMW X3',
+    'Subaru Crosstrek'
   ];
 
-  return <List cars={cars} />;
+  return <List favoriteCars={favoriteCars} />;
 };
 
 const List = props => {
-  const listItems = props.cars.map((cars, index) => (
-    <li key={index}>
-      {cars.name}: {cars.type}
-    </li>
+  const listCars = props.favoriteCars.map((car, index) => (
+    <li key={index}>{car}</li>
   ));
-
-  return <ol>{listCars}</ol>;
+  return <ul>{listCars}</ul>;
 };
-
 ReactDOM.render(<App />, document.getElementById('root'));
